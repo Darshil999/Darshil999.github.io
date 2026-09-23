@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Darshil Kalyani | Software Developer</title>
+  <meta name="description" content="Darshil Kalyani: software developer (full-stack and applied AI). Master's student at Concordia University, seeking Winter 2027 internships in Canada or remote." />
+  <meta name="theme-color" content="#0b0f14" />
+
+  <!-- Link preview (LinkedIn, Slack, etc.) -->
+  <meta property="og:title" content="Darshil Kalyani | Software Developer" />
+  <meta property="og:description" content="Full-stack and applied AI developer. Seeking Winter 2027 internships in Canada or remote." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a class="logo" href="#top">~/darshil</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero container" id="top">
+      <p class="prompt"><span class="accent">$</span> whoami</p>
+      <h1>Darshil Kalyani</h1>
+      <p class="headline">Software Developer: Full-Stack &amp; Applied AI</p>
+      <p class="lead">
+        I build web applications and Python tools that people actually use, from telescope
+        automation software used by astronomers at the Physical Research Laboratory to a
+        multi-provider AI chat platform.
+      </p>
+
+      <ul class="status">
+        <li><span class="dot"></span>Seeking <strong>Winter 2027</strong> internships (Jan–Apr)</li>
+        <li>Canada or remote · open to relocation · eligible to work in Canada</li>
+        <li>Master of Applied Computer Science @ Concordia University, Montreal</li>
+      </ul>
+
+      <div class="cta">
+        <!-- EDIT: put your phone-free resume at assets/Darshil_Kalyani_Resume.pdf, then remove the "ph-link" class below -->
+        <a class="btn btn-primary ph-link" href="assets/Darshil_Kalyani_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        <a class="btn" href="https://github.com/Darshil999" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/darshilkalyani" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="mailto:kalyanidarshil7@gmail.com">Email</a>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section container" id="experience">
+      <h2 class="section-title"><span class="accent">01.</span> Experience</h2>
+
+      <!-- EDIT: Experience 1 -->
+      <article class="card job featured">
+        <div class="job-head">
+          <div>
+            <h3>Software Development Intern</h3>
+            <p class="org">Physical Research Laboratory (PRL) · Ahmedabad, India</p>
+          </div>
+          <p class="date">Jan 2025 – Apr 2025</p>
+        </div>
+        <p class="badge">Software run on a 2.5 m telescope at Mt. Abu Observatory</p>
+        <ul class="bullets">
+          <!-- EDIT: confirm with your supervisor that "10 minutes" is per observation run -->
+          <li>Built Python tools that automate telescope pointing, CCD imaging and spectrograph calibration (argon, halogen and dark frames). Cut roughly <strong>10 minutes of manual setup per observation run</strong> (supervisor's estimate).</li>
+          <li>Built Tkinter control apps with start/stop controls and threaded execution. Added strict input checks on filters, exposure times, frame counts and sequence lengths so bad settings are rejected before any hardware moves.</li>
+          <li>Wrote a bright-star selection algorithm (Astropy, Pandas, NumPy). It splits a star catalog into declination and RA grids and picks isolated bright stars for telescope pointing and focusing.</li>
+          <li>Tested remotely and on live hardware during night observations at Mt. Abu. <strong>The tools are still used by the team.</strong></li>
+        </ul>
+        <ul class="tags">
+          <li>Python</li><li>Tkinter</li><li>PyAutoGUI</li><li>Astropy</li><li>NumPy</li><li>Pandas</li><li>Telnet / Serial</li>
+        </ul>
+      </article>
+
+      <!-- EDIT: Experience 2 -->
+      <article class="card job">
+        <div class="job-head">
+          <div>
+            <h3>Frontend Web Development Intern</h3>
+            <p class="org">Plumscope Inc. · Ahmedabad, India</p>
+          </div>
+          <p class="date">May 2023 – Jul 2023</p>
+        </div>
+        <ul class="bullets">
+          <li>Built the About Us and Contact Us pages of the company's live website: responsive layouts and client-side form validation.</li>
+          <li>Worked in a three-person team through requirements, cross-browser testing, review and production deployment.</li>
+        </ul>
+        <ul class="tags">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section container" id="projects">
+      <h2 class="section-title"><span class="accent">02.</span> Featured Projects</h2>
+
+      <div class="grid">
+        <!-- EDIT: Project 1 -->
+        <article class="card project">
+          <p class="kicker">Full-stack · TypeScript · Solo</p>
+          <h3>DocuMind</h3>
+          <p class="summary">An AI chat assistant for developer documentation. Each conversation is scoped to one source (Stripe, Firebase, Next.js, OpenAI, LiveKit).</p>
+          <ul class="bullets">
+            <li>Next.js client and Express/TypeScript API. Responses stream token by token over Server-Sent Events.</li>
+            <li>One provider layer (Vercel AI SDK) switches between OpenAI, Claude, Gemini and Groq without code changes.</li>
+            <li>Image and file attachments go to AWS S3 and are passed to vision-capable models.</li>
+            <li>Email and Google sign-in, JWT with refresh-token rotation in httpOnly cookies, BullMQ background jobs, OpenTelemetry tracing.</li>
+          </ul>
+          <!-- PLACEHOLDER: replace with a live demo link or a real usage result -->
+          <p class="result ph">PLACEHOLDER: add a live demo link (Vercel + Render free tiers)</p>
+          <ul class="tags"><li>Next.js</li><li>React</li><li>Express</li><li>MongoDB</li><li>AWS S3</li><li>LLM APIs</li></ul>
+          <div class="links">
+            <!-- EDIT: confirm repo URL -->
+            <a href="https://github.com/Darshil999/DocuMind" target="_blank" rel="noopener">Code →</a>
+          </div>
+        </article>
+
+        <!-- EDIT: Project 2 -->
+        <article class="card project">
+          <p class="kicker">Backend · Java · Solo</p>
+          <h3>NotiLytics</h3>
+          <p class="summary">A news analytics web app. It searches live news and scores each article for sentiment and reading difficulty.</p>
+          <ul class="bullets">
+            <li>Java 17 and Play Framework with an MVC structure. The API code is kept in a service layer behind dependency injection (Guice).</li>
+            <li>Non-blocking API calls with <code>CompletableFuture</code>. Timeouts and bad responses are handled without breaking the page.</li>
+            <li>Per-session search history in a thread-safe <code>ConcurrentHashMap</code>, plus word-frequency stats and publisher profile pages.</li>
+          </ul>
+          <p class="result"><strong>89% test coverage</strong> (JaCoCo) with JUnit, Mockito and AssertJ. External APIs are mocked so failure cases are tested every run.</p>
+          <ul class="tags"><li>Java</li><li>Play</li><li>REST APIs</li><li>JUnit</li><li>Mockito</li></ul>
+          <div class="links">
+            <!-- EDIT: replace with the exact repo URL, then remove "ph-link" -->
+            <a class="ph-link" href="https://github.com/Darshil999" target="_blank" rel="noopener">Code →</a>
+          </div>
+        </article>
+
+        <!-- EDIT: Project 3 -->
+        <article class="card project">
+          <p class="kicker">Search · NLP · Python</p>
+          <h3>ArXiv Semantic Search</h3>
+          <p class="summary">A search engine for computer science research papers that matches by meaning, not exact keywords.</p>
+          <ul class="bullets">
+            <li>Turns paper abstracts into 384-dimension vectors with a sentence-transformer model (all-MiniLM-L6-v2) and stores them in Elasticsearch.</li>
+            <li>Ranks results by cosine similarity, so a search for “deep learning for language understanding” finds transformer and NLP papers that never use those words.</li>
+            <li>Python pipeline that filters the arXiv dataset down to CS papers, cleans it and indexes it.</li>
+          </ul>
+          <!-- PLACEHOLDER: run GET /<index>/_count in Elasticsearch and time a few queries -->
+          <p class="result ph">PLACEHOLDER: “Indexed [N] papers · typical query in [X] ms”</p>
+          <ul class="tags"><li>Python</li><li>Elasticsearch</li><li>Sentence Transformers</li><li>Pandas</li></ul>
+          <div class="links">
+            <a class="ph-link" href="https://github.com/Darshil999" target="_blank" rel="noopener">Code →</a>
+          </div>
+        </article>
+
+        <!-- EDIT: Project 4 -->
+        <article class="card project">
+          <p class="kicker">Machine learning · Django · Solo</p>
+          <h3>BioPredict</h3>
+          <p class="summary">A web app that gives an early risk estimate for heart disease, diabetes and lung cancer from health inputs.</p>
+          <ul class="bullets">
+            <li>Cleaned and prepared three Kaggle datasets (missing values, normalization, feature selection).</li>
+            <li>Compared Random Forest, SVM, Decision Tree and Logistic Regression using cross-validation, precision, recall and F1.</li>
+            <li>Saved the best models and served them through Django forms and views.</li>
+          </ul>
+          <!-- PLACEHOLDER: re-run evaluation on the saved .pkl models and add real accuracy per disease -->
+          <p class="result ph">PLACEHOLDER: best-model accuracy per disease</p>
+          <ul class="tags"><li>Python</li><li>scikit-learn</li><li>Django</li><li>Pandas</li></ul>
+          <div class="links">
+            <a class="ph-link" href="https://github.com/Darshil999" target="_blank" rel="noopener">Code →</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- ============ MORE PROJECTS ============ -->
+      <h3 class="sub-title">More projects</h3>
+      <ul class="more">
+        <!-- EDIT: replace each href with the exact repo URL, then remove "ph-link" -->
+        <li>
+          <a class="ph-link" href="https://github.com/Darshil999" target="_blank" rel="noopener">VOT: Blockchain Voting</a>
+          <span>Ethereum app where a Solidity smart contract allows one vote per wallet. React + Ethers.js frontend, tested with Hardhat.</span>
+        </li>
+        <li>
+          <a class="ph-link" href="https://github.com/Darshil999" target="_blank" rel="noopener">DriveNow: Car Rental System</a>
+          <span>PHP/MySQL rental platform with customer and admin portals, a 10-table schema and a booking flow (new → confirmed/cancelled).</span>
+        </li>
+        <li>
+          <a class="ph-link" href="https://github.com/Darshil999" target="_blank" rel="noopener">TravelEase: Tour Booking Site</a>
+          <span>PHP/MySQL travel site with destination browsing, a package cart and a booking form.</span>
+        </li>
+        <li>
+          <!-- Code for this project is lost, so there is no link. Remove this item if you prefer. -->
+          <span class="nolink">BERT vs RoBERTa: Tweet Sentiment</span>
+          <span>Fine-tuned both models with PyTorch and Hugging Face, then compared accuracy, precision, recall and F1 on the same data (Applied AI course).</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section container" id="skills">
+      <h2 class="section-title"><span class="accent">03.</span> Skills</h2>
+      <div class="skills">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <ul class="tags"><li>Python</li><li>Java</li><li>TypeScript</li><li>JavaScript</li><li>SQL</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Web &amp; Backend</h3>
+          <ul class="tags"><li>React</li><li>Next.js</li><li>Node / Express</li><li>Django</li><li>Play Framework</li><li>REST APIs</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Data &amp; AI</h3>
+          <ul class="tags"><li>Pandas</li><li>NumPy</li><li>scikit-learn</li><li>PyTorch</li><li>Hugging Face</li><li>Elasticsearch</li><li>LLM APIs</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Databases &amp; Tools</h3>
+          <ul class="tags"><li>MongoDB</li><li>MySQL</li><li>AWS S3</li><li>Git</li><li>JUnit / Mockito</li><li>Jira / Agile</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section container" id="education">
+      <h2 class="section-title"><span class="accent">04.</span> Education</h2>
+      <article class="card job">
+        <div class="job-head">
+          <div>
+            <h3>Master of Applied Computer Science</h3>
+            <p class="org">Concordia University · Montreal, QC</p>
+          </div>
+          <p class="date">Sep 2025 – 2027 (expected)</p>
+        </div>
+        <p class="muted">Coursework: Applied AI, Distributed Systems Design, Big Data, Software Project Management, Applied Programming Practices</p>
+      </article>
+      <article class="card job">
+        <div class="job-head">
+          <div>
+            <h3>B.Tech, Computer Science &amp; Engineering</h3>
+            <p class="org">Indus University · Ahmedabad, India</p>
+          </div>
+          <p class="date">2021 – 2025</p>
+        </div>
+        <p class="muted">GPA 8.98 / 10</p>
+      </article>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section container contact" id="contact">
+      <h2 class="section-title"><span class="accent">05.</span> Contact</h2>
+      <p class="lead">I'm looking for Winter 2027 software internships in Canada or remote. Email is the fastest way to reach me.</p>
+      <a class="btn btn-primary" href="mailto:kalyanidarshil7@gmail.com">kalyanidarshil7@gmail.com</a>
+      <ul class="contact-links">
+        <li><a href="https://www.linkedin.com/in/darshilkalyani" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/Darshil999" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>© <span id="year">2026</span> Darshil Kalyani · Built with plain HTML &amp; CSS</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
