@@ -60,7 +60,7 @@ The arXiv repository already includes real screenshots in `docs/screenshots/`, w
 2. In `dist/site-config.js`, set `resumeUrl: "assets/Darshil_Kalyani_Resume.pdf"`.
 3. The hero **Résumé** button and the résumé section become PDF downloads.
 
-Until then, both point to a "Résumé available on request" note with an email link. **Never** place the internal master résumé or any private document in `dist/`, because everything in that folder is published.
+The static fallback link also points directly to the PDF, so the résumé remains available even before JavaScript loads. **Never** place the internal master résumé or any private document in `dist/`, because everything in that folder is published.
 
 ## Add a live demo link
 
@@ -81,7 +81,7 @@ The cards currently show only GitHub links because none of the projects has a ve
 
 GitHub Pages is the primary host. `.github/workflows/pages.yml` publishes `dist/` on every push to `main`, and it can also be run manually. There's no build step and no secrets are needed. One-time setup: **Settings → Pages → Source: GitHub Actions**.
 
-Once Pages is enabled, the default address will be `https://darshil999.github.io/Darshils_Portfolio/`. All asset paths are relative, so the site works at that sub-path, on localhost, and on a future custom domain.
+Once Pages is enabled on the `Darshil999.github.io` user-site repository, the address is `https://darshil999.github.io/`. All asset paths are relative, so the site also works on localhost and on a future custom domain.
 
 A custom domain (for example one from the GitHub Student Developer Pack) can be connected later. See [HOSTING.md](HOSTING.md). Firebase Hosting remains documented there as an optional fallback.
 

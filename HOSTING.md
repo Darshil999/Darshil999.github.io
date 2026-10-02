@@ -1,6 +1,6 @@
 # Hosting
 
-Repository: <https://github.com/Darshil999/Darshils_Portfolio>
+Repository: <https://github.com/Darshil999/Darshil999.github.io>
 
 The portfolio is a static site in `dist/`. **GitHub Pages** is the primary host. **Firebase Hosting** is documented below as an optional fallback. Neither one hosts the backends of the showcased projects; the portfolio links to their repositories.
 
@@ -19,7 +19,7 @@ The workflow at `.github/workflows/pages.yml`:
 3. Open **Actions → Deploy portfolio to GitHub Pages**. Re-run the latest run, or use **Run workflow** on `main`. The first run can fail if it started before Pages was enabled; re-running fixes that.
 4. When the job succeeds, the URL appears in the run summary and in **Settings → Pages**.
 
-Once deployed, the default address will be `https://darshil999.github.io/Darshils_Portfolio/`. This is the expected address, not a claim that the site is already live. All paths in the site are relative, so it works at this sub-path.
+Once deployed, the default address is `https://darshil999.github.io/`. All paths in the site are relative, so the same files also work on localhost and a future custom domain.
 
 `dist/.nojekyll` is kept so the folder can also be published from a branch without Jekyll processing.
 
