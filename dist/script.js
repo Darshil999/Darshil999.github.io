@@ -1,4 +1,4 @@
-/* Progressive enhancement: content, navigation and project details work without JavaScript. */
+/* Progressive enhancement: content, links, navigation and project details all work without JavaScript. */
 (() => {
   'use strict';
   document.body.classList.add('js-enabled');
@@ -31,30 +31,37 @@
       return ['https:', 'http:', 'file:'].includes(parsed.protocol);
     } catch { return false; }
   };
+
+  // Repository links: the HTML already holds working URLs; the config can override them.
   document.querySelectorAll('.repo-link').forEach((link) => {
     const url = config.projects?.[link.dataset.project];
-    if (validLink(url)) {
-      link.href = url;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.removeAttribute('aria-disabled');
-      link.removeAttribute('tabindex');
-      link.textContent = 'View on GitHub ↗';
-      link.setAttribute('aria-label', `View ${link.closest('article').querySelector('h3').textContent} on GitHub`);
-    } else {
-      link.addEventListener('click', (event) => event.preventDefault());
-    }
+    if (validLink(url)) link.href = url;
   });
+
+  // Screenshots: swap a placeholder panel for a real image once its path is configured.
+  document.querySelectorAll('.project-visual[data-screenshot]').forEach((panel) => {
+    const src = config.screenshots?.[panel.dataset.screenshot];
+    if (!validLink(src)) return;
+    const img = new Image();
+    img.className = 'project-screenshot';
+    img.src = src;
+    img.alt = panel.dataset.alt || '';
+    img.width = 1200;
+    img.height = 675;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.addEventListener('load', () => panel.replaceWith(img), { once: true });
+  });
+
   if (validLink(config.resumeUrl)) {
     document.querySelectorAll('.resume-link').forEach((link) => {
       link.href = config.resumeUrl;
-      link.textContent = 'Download résumé ↓';
+      link.textContent = 'Résumé ↓';
       link.setAttribute('download', 'Darshil_Kalyani_Resume.pdf');
     });
     const resumeSection = document.getElementById('resume');
-    resumeSection.querySelector('.eyebrow').textContent = 'Résumé';
     resumeSection.querySelector('h2').textContent = 'My experience, at a glance.';
-    resumeSection.querySelector('p:not(.eyebrow)').textContent = 'Download my résumé as a PDF.';
+    resumeSection.querySelector('p:not(.eyebrow)').textContent = 'Download my one-page résumé as a PDF.';
     const link = resumeSection.querySelector('a');
     link.href = config.resumeUrl;
     link.textContent = 'Download résumé ↓';

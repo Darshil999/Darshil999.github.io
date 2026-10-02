@@ -1,86 +1,94 @@
-# Darshil Kalyani portfolio
+# Darshil Kalyani — Portfolio
 
-A lightweight portfolio for Winter 2027 internships, built with HTML, CSS, and JavaScript. No framework, database, package installation, API key, or build process is required.
+Personal portfolio website for Darshil Kalyani, a Computer Science graduate student at Concordia University seeking Winter 2027 software engineering, full-stack, backend, AI/ML, and data internships.
 
-## Open it
+Plain **HTML, CSS, and JavaScript**. There's no framework, package installation, build step, database, analytics, or API key. The core page, including every link, works without JavaScript.
 
-Open `dist/index.html` in a browser. All site assets are local and the core page works without JavaScript. For a local server, run `python -m http.server 8000 --directory dist`, then visit `http://localhost:8000`.
+## Flagship projects
 
-## Files you will edit
+1. **ArXiv Semantic Search**: [github.com/Darshil999/arxiv-semantic-search](https://github.com/Darshil999/arxiv-semantic-search)
+2. **DocuMind**: [github.com/Darshil999/DocuMind](https://github.com/Darshil999/DocuMind)
+3. **BioPredict**: [github.com/Darshil999/BioPredict--Disease-Prediction-System](https://github.com/Darshil999/BioPredict--Disease-Prediction-System)
+4. **NotiLytics**: [github.com/Darshil999/Notilytics](https://github.com/Darshil999/Notilytics)
 
-| File | Purpose |
-| --- | --- |
-| `dist/index.html` | Name, availability, introduction, projects, experience, skills, education, contact |
-| `dist/styles.css` | Colors, typography, layouts, mobile breakpoints, reduced-motion and print styles |
-| `dist/site-config.js` | Project repository URLs and public résumé PDF URL |
-| `dist/script.js` | Mobile navigation and enabling configured links |
-| `dist/assets/` | Your real screenshots and public résumé |
-| `HOSTING.md` | GitHub Pages, Firebase Hosting, custom domain setup |
-| `.github/workflows/pages.yml` | Publish the `dist` folder through GitHub Actions |
-| `firebase.json` | Optional Firebase Hosting configuration |
+A compact "Other projects" list follows them: BERT vs RoBERTa, DriveNow, and TravelEase.
 
-## Add your repository links
+## Folder structure
 
-Edit `dist/site-config.js`. Replace each `null` with a quoted, real URL. Unknown links intentionally remain disabled and labeled as placeholders. The GitHub profile and LinkedIn links already use the contact details you supplied.
-
-```js
-window.PORTFOLIO = {
-  resumeUrl: "assets/Darshil_Kalyani_Resume.pdf",
-  projects: {
-    documind: "https://github.com/Darshil999/REPLACE-WITH-REAL-REPO",
-    notilytics: null,
-    biopredict: null,
-    drivenow: null
-  }
-};
+```
+.
+├── .github/workflows/pages.yml   GitHub Pages deployment (uploads dist/ only)
+├── dist/                         The deployable website
+│   ├── index.html                All page content
+│   ├── styles.css                Design tokens, layout, breakpoints, reduced motion, print
+│   ├── script.js                 Mobile menu, config-driven links, screenshots, résumé
+│   ├── site-config.js            Project URLs, screenshot paths, public résumé URL
+│   ├── favicon.svg
+│   ├── 404.html
+│   ├── .nojekyll
+│   └── assets/                   Screenshots and the public résumé go here
+├── firebase.json                 Optional Firebase Hosting fallback
+├── HOSTING.md                    Deployment and custom-domain guide
+└── README.md
 ```
 
-The repository name in that example is explicitly a placeholder. Do not publish the example as a working link.
+## Local preview
 
-## Add your public résumé
+```bash
+python -m http.server 8000 --directory dist
+```
 
-1. Save a concise, public-facing résumé as `dist/assets/Darshil_Kalyani_Resume.pdf`.
-2. Set `resumeUrl` as shown above.
-3. Refresh the site. Both résumé links become PDF downloads and the placeholder message is replaced.
+Then open <http://localhost:8000>. On Windows, use `py` if `python` isn't on your PATH. You can also open `dist/index.html` directly in a browser.
 
-The internal master résumé and dossiers are not included. They are background material, not suitable public downloads.
+## Add project screenshots
 
-## Replace screenshot placeholders
+Each project card shows an intentional placeholder panel until a real screenshot is configured.
 
-Save a screenshot such as `dist/assets/documind.webp`. In `index.html`, replace that project's complete `<div class="project-visual ...">...</div>` block with:
+1. Capture a genuine screenshot of the running project with no private data. Use 16:9 (for example 1200 × 675) and save it as WebP, ideally under 200 KB:
+   - `dist/assets/arxiv.webp`
+   - `dist/assets/documind.webp`
+   - `dist/assets/biopredict.webp`
+   - `dist/assets/notilytics.webp`
+2. In `dist/site-config.js`, set the matching entry, for example `arxiv: "assets/arxiv.webp"`.
+3. Refresh. The placeholder is replaced with a lazy-loaded image. Its alt text comes from the card's `data-alt` attribute in `index.html`, so update that text if the screenshot shows something different.
+
+The arXiv repository already includes real screenshots in `docs/screenshots/`, which you could convert to WebP.
+
+## Add the public résumé later
+
+1. Save a concise, public one-page résumé as `dist/assets/Darshil_Kalyani_Resume.pdf`.
+2. In `dist/site-config.js`, set `resumeUrl: "assets/Darshil_Kalyani_Resume.pdf"`.
+3. The hero **Résumé** button and the résumé section become PDF downloads.
+
+Until then, both point to a "Résumé available on request" note with an email link. **Never** place the internal master résumé or any private document in `dist/`, because everything in that folder is published.
+
+## Add a live demo link
+
+The cards currently show only GitHub links because none of the projects has a verified public deployment. Once a project is deployed, add a second link to its `.project-links` block in `index.html`:
 
 ```html
-<img class="project-screenshot"
-     src="assets/documind.webp"
-     alt="DocuMind conversation showing a documentation question and response"
-     width="1200" height="550"
-     loading="lazy" decoding="async">
+<a class="project-link" href="https://your-verified-demo-url" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
 ```
 
-Update the filename and alt text for each project. Use genuine screenshots with no private data, and aim for less than 200 KB per image. The image styling preserves the screenshot without cropping. If screenshots are unavailable, you can retain the explicitly marked placeholders while reviewing the draft.
+## Edit content and design
 
-## Change the design or text
+- **Text:** edit `dist/index.html` directly. HTML comments mark the editable sections.
+- **Colours:** change the variables at the top of `dist/styles.css`. Fonts use local system stacks, so there are no web-font downloads.
+- **Layout:** the four flagship cards form a two-column grid on desktop and a single column below 760px. ArXiv Semantic Search and DocuMind use the `project-card--lead` modifier for extra emphasis.
+- **Project details:** these use native `<details>` elements, so they work with keyboard, touch, and no JavaScript.
 
-The color variables are at the top of `styles.css`. The font stacks use locally available fonts, avoiding external font downloads. The desktop projects form two columns; mobile projects form one. Native `<details>` elements make project descriptions expandable with a keyboard or touch.
+## Deployment
 
-Content is written directly in HTML for accessibility, search engines, and easy editing. There is no CMS or generated content to rebuild. Keep the HTML comments marking the editable sections. Change the Winter 2027 availability line when your internship search changes.
+GitHub Pages is the primary host. `.github/workflows/pages.yml` publishes `dist/` on every push to `main`, and it can also be run manually. There's no build step and no secrets are needed. One-time setup: **Settings → Pages → Source: GitHub Actions**.
 
-## Content decisions
+Once Pages is enabled, the default address will be `https://darshil999.github.io/Darshils_Portfolio/`. All asset paths are relative, so the site works at that sub-path, on localhost, and on a future custom domain.
 
-- NotiLytics and BioPredict are presented as solo projects, following your explicit clarification.
-- PRL and Plumscope are in Experience, with team contributions described as such.
-- PRL's unverified percentage improvement and BioPredict's performance targets are not presented as measured results.
-- BioPredict is described as an educational ML prototype.
-- No fictional users, performance statistics, testimonials, or clinical claims have been added.
-- Your phone number and GPA are omitted from the public portfolio.
-- Screenshots, individual project repository URLs, and public résumé are the remaining placeholders.
+A custom domain (for example one from the GitHub Student Developer Pack) can be connected later. See [HOSTING.md](HOSTING.md). Firebase Hosting remains documented there as an optional fallback.
 
-## Checks performed
+## Content principles
 
-JavaScript syntax, unique HTML IDs, section links, local asset references, heading structure, and CSS brace balance were checked. The initial HTML, CSS, and JavaScript total approximately 42 KB before compression. This is file size, not a measured loading speed.
-
-Responsive breakpoints, reduced motion, visible keyboard focus, a skip link, semantic headings, and navigation without JavaScript are implemented. A browser-based visual/device test was not available in the build environment. Before public launch, inspect at phone and desktop widths, open each project detail, navigate with Tab, test the mobile menu and Escape key, and try the email and résumé links.
-
-## Publish
-
-Follow `HOSTING.md`. GitHub Pages is the recommended option for this static portfolio. Firebase Hosting is also supported. Neither hosts the PHP/Java/Python project backends shown in the portfolio; those projects are showcased here through descriptions, screenshots, and links.
+- The current GitHub repositories are the source of truth for project descriptions.
+- No invented metrics, accuracy figures, users, testimonials, or live-demo links.
+- BioPredict is presented as an educational ML inference project, not a diagnostic tool.
+- DocuMind's retrieval-augmented document indexing is listed as planned, not implemented.
+- The phone number, GPA, and internal résumé material aren't published.
