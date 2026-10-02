@@ -10,7 +10,7 @@
  *               public one-page résumé. Never publish the internal master résumé.
  */
 window.PORTFOLIO = {
-  resumeUrl: null,
+  resumeUrl: "assets/Darshil_Kalyani_Resume.pdf",
   projects: {
     arxiv: "https://github.com/Darshil999/arxiv-semantic-search",
     documind: "https://github.com/Darshil999/DocuMind",
